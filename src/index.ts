@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/auth/auth.routes.js";
 import { pool } from "./service/db.js";
 import { execSync } from "child_process";
+import cors from 'cors';
 
 // Obtener la rama actual de Git
 const getCurrentGitBranch = () => {
@@ -22,7 +23,9 @@ const envFile = `.env.${currentBranch}`;
 dotenv.config({ path: envFile });
 
 const app = express();
-
+app.use(cors({
+  origin: '*' 
+}));
 app.use(express.json());
 
 // Rutas
