@@ -11,7 +11,7 @@ pipeline {
         DEV_IP = '35.173.210.139'
         QA_IP  = '34.199.159.255'
         PROD_IP = '18.235.91.203'
-        REMOTE_PATH = '/home/ubuntu/AUTH_SERVICE'
+        REMOTE_PATH = '/home/ubuntu/auth_service'
     }
 
     stages {
@@ -62,7 +62,7 @@ pipeline {
 
                         echo "📁 Verificando carpeta de app..."
                         if [ ! -d "$REMOTE_PATH/.git" ]; then
-                            git clone https://github.com/Gallegos19/JenkinsTest.git $REMOTE_PATH
+                            git clone https://github.com/Gallegos19/auth_service.git $REMOTE_PATH
                         fi
 
                         echo "🔁 Pull y deploy..."
