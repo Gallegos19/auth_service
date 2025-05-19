@@ -2,4 +2,6 @@ node_modules/
 .env
 .env.main
 .env.qa
+.env.dev
+
 dist/
