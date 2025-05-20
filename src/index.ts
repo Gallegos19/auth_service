@@ -22,7 +22,8 @@ const envFile = `.env.${currentBranch}`;
 // Configurar dotenv con el archivo correspondiente a la rama
 dotenv.config({ path: envFile });
 console.error(`Using environment file: ${envFile}`);
-
+console.error('DB_USER:', process.env.DB_USER);
+console.error('DB_HOST:', process.env.DB_HOST);
 const app = express();
 app.use(cors({
   origin: '*' 
